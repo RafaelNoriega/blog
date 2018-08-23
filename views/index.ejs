@@ -1,0 +1,19 @@
+<%include ./partials/header %>
+
+<div class="ui main text container segment">
+	<h1>Blogs</h1>
+	<% blogs.forEach(function(blog){ %>
+		<div>
+			<h2> <%= blog.title %></h2>
+			<img class="ui fluid image" src="<%= blog.image %>">
+			<p><small><%= blog.created %></small></p>
+			<p><%= blog.body.substring(0,80)%></p>
+			<a href="/blogs/<%= blog._id %>">
+				<button class="ui orange basic button">Read More</button>
+			</a>
+
+		</div>
+	<% }); %>
+</div>
+
+<% include ./partials/footer %>
